@@ -89,12 +89,17 @@ namespace ConcatAndSort
             {
                 for (int j = i + 1; j < input.Length; j++)
                 {
+                   // Console.WriteLine($"Cycle {i+j}. i={i}, j={j}, input[i]={input[i]}, input[j]={input[j]}");
                     if (input[i] > input[j])
                     {
+                        //Console.WriteLine("Conditions is true, making changes and next circle");
                         temp = input[i];
                         input[i] = input[j];
                         input[j] = temp;
                     }
+                    //else
+                        //Console.WriteLine("Conditions is false, going to next circle");
+                    //Console.ReadLine();
                 }
             }
             return input;
