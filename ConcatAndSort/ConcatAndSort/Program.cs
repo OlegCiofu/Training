@@ -16,9 +16,11 @@ namespace ConcatAndSort
             int[] arr3 = method.Concat(arr1, arr2);
             method.ShowArr(arr3, "Concatenated");
 
-            int[] arr4 = method.Sort(arr3);
-            method.ShowArr(arr4, "Sorted");
-            
+            //int[] arr4 = method.Sort(arr3);
+           // method.ShowArr(arr4, "Sorted");
+
+            int[] arr5 = method.SortBest(arr3);
+            method.ShowArr(arr5, "Sorted Best");
         }
     }
 
@@ -77,6 +79,25 @@ namespace ConcatAndSort
                 arr[poz] = temp;
             }
             return arr;
+
+        }
+
+        public int[] SortBest(int[] input)
+        {
+            int temp;
+            for (int i = 0; i < input.Length - 1; i++)
+            {
+                for (int j = i + 1; j < input.Length; j++)
+                {
+                    if (input[i] > input[j])
+                    {
+                        temp = input[i];
+                        input[i] = input[j];
+                        input[j] = temp;
+                    }
+                }
+            }
+            return input;
 
         }
     }
